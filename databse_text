@@ -1,0 +1,15 @@
+database
+tree
+-id
+-dueño
+-caracteristicas
+-latitud
+-longitud
+
+--debe tener para subir imagenes
+
+user
+-correo
+-password
+
+

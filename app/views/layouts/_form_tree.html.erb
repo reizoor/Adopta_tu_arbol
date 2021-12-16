@@ -1,0 +1,25 @@
+<%if !params[:code]%>
+    <form>
+            <%= form_with(url: choice_view_path(:code), method: :get) do |form| %>
+                <div class="d-flex justify-content-center">
+                    <%= form.text_field :code, class: 'col-4 form-control m-3' %>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <%= form.submit "BUSCAR", class:'btn btn-success mt-3' %>
+                </div>
+            <% end %>
+            </div>
+    </form>
+<%else%>
+    <form>
+            <%= form_with(url: tree_path(:tree), method: :get) do |form| %>
+                <div class="d-flex justify-content-center">
+                    <%= form.text_field :code, disabled: true, value: params[:code], class: 'col-4 form-control m-3' %>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <%= link_to "VER",tree_path(tree), class:'text-light btn btn-success mt-3' %>
+                </div>
+            <% end %>
+            </div>
+    </form>
+<%end%>

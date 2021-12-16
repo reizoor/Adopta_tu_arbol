@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center pt-1">
+    <div class="col-6 accordion pt-4" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Ayuda
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Si solo desea ver el árbol, presione en <strong>VER</strong>, si desea editar el árbol, coloque la contraseña del árbol y presion <strong>EDITAR</strong>
+                    <%# <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    
+    <div class="col-12 d-flex justify-content-center p-3">
+        <h2>CÓDIGO DEL ÁRBOL<h2>
+    </div>
+    <div class ="col-12 d-flex justify-content-center p-3 pt-0">
+         <%= render 'layouts/form_tree', tree: @tree %> 
+    </div> 
+
+     <div class="col-12 d-flex justify-content-center p-3">
+        <h2>CONTRASEÑA DEL ÁRBOL<h2>
+    </div>
+    <div class ="col-12 d-flex justify-content-center p-3 pt-0">
+         <%= render 'layouts/form_choice_view' %> 
+    </div> 
+</div>
+<div class="container pt-4">
+
+<div class="col-10">
+  <%= link_to 'Atras', root_path, class: 'btn btn-outline-success' %>
+</div>
+</div>

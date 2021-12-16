@@ -1,0 +1,18 @@
+<div class="container mt-4">
+<h1>Editar datos de propietario</h1>
+</div>
+<%= render 'form', tree: @tree %>
+
+
+<div class="container">
+<div class="row pt-4">
+    <div class="col-11">
+       <%= link_to 'Atras', choice_view_path(code: @tree.code), class:"text-light btn btn-success" %>
+    </div>
+    <div class="col-1">
+        <%= link_to "Ver", @tree, class:"text-light btn btn-success" %>
+    </div>
+</div>
+</div>
+ <%= javascript_pack_tag 'form_check_box' %>
+

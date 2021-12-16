@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dueño</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Caracteristica</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trees.each do |tree| %>
+      <tr>
+        <td><%= tree.dueño %></td>
+        <td><%= tree.latitud %></td>
+        <td><%= tree.longitud %></td>
+        <td><%= tree.caracteristica %></td>
+        <td><%= link_to 'Show', tree %></td>
+        <td><%= link_to 'Edit', edit_tree_path(tree) %></td>
+        <td><%= link_to 'Destroy', tree, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tree', new_tree_path %>

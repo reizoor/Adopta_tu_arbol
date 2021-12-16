@@ -1,0 +1,67 @@
+<%= form_with(model: tree, local: true) do |form| %>
+  <% if tree.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tree.errors.count, "error") %> prohibited this tree from being saved:</h2>
+
+      <ul>
+        <% tree.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if @tree.images.attached?%>
+    <div class='col-6 pr-3'>
+      <%= image_tag(@tree.images, class:"img-thumbnail") %>
+    </div>
+
+       <div id="map"></div>
+       
+       <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGEOoLIP3iEXwRoCTxvf5O80xhf4Q57zA&callback=initMap&v=weekly">
+      </script>
+    </div>
+  
+  <% else %>
+    
+       <div id="map"></div>
+       
+       <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBRmIHsHNSyqOoRVj4YqHSxS-us8kncto&callback=initMap&v=weekly">
+      </script>
+   
+  <%end%>
+
+<div class="container pt-4">
+  <div class="row d-flex justify-content-center">
+    <div class="col-4">
+      <h3><%= form.label :owner, "Propietario" %></h3>
+      <%= form.text_field :owner, class: "col-4 form-control m-3", id:"input_owner", disabled: false%>
+    </div>
+  </div>
+    <div class="row  d-flex justify-content-center">
+    <div class="col-1 form-check form-switch">
+      <%= form.check_box :anonymous, value: "Anonimo" , checked: false, class:"form-check-input", role:"switch", id:'check_box', onchange: "document.getElementById('input_owner').disabled = this.checked"%>
+    </div>
+    <div class="col-1">
+      <h5><%= form.label :anonymous, "Anonimato" %></h5>
+    </div>
+    
+    
+<%#
+ <div class="col-12 d-flex justify-content-center pt-3">
+      <h3>Caracteristicas</h3>
+    </div>
+    <div class="col-12 d-flex sm-justify-content-center pt-3">
+       <h3><%=@tree.features%><%#</h3>
+%>
+</div>
+
+  <div class="container pt-4">
+    <div class="col-12 d-flex justify-content-center">
+      <%= form.submit "Actualizar datos", class:"btn btn-success mt-3"%>
+    </div>
+  </div>
+
+
+<% end %>

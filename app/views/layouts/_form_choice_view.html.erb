@@ -1,0 +1,11 @@
+<form>
+        <%= form_with(url: choice_view_path(:password), method: :get) do |form| %>
+            <div class="d-flex justify-content-center">
+                <%= form.text_field :password, class: 'col-4 form-control m-3' %>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <%= form.submit "EDITAR", class:'btn btn-success mt-3' %>
+            </div>
+        <% end %>
+        </div>
+</form>
