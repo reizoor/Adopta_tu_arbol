@@ -1,24 +1,16 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Web Page where users can see the location of the tree that was acquired after the donation
 
-Things you may want to cover:
 
-* Ruby version
+### This project use:
 
-* System dependencies
+- Ruby 2.7.1
 
-* Configuration
+- Rails ~> 6.0.3 >= 6.0.3.5
 
-* Database creation
+- POSTGRESQL Database
 
-* Database initialization
+- Boostrap for webpage style
 
-* How to run the test suite
+- Maps JS api from Google
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
