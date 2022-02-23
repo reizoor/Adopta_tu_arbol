@@ -1,25 +1,9 @@
 
-  <% if @tree.images.attached?%>
-    <div class='col-6 pr-3'>
-      <%= image_tag(@tree.images, class:"img-thumbnail") %>
-    </div>
-
-       <div id="map"></div>
-       
-       <script async
-        src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["MAPS_API_KEY"]%>&callback=initMap&v=weekly">
-      </script>
-    </div>
+<div id="map"></div>
   
-  <% else %>
-    
-       <div id="map"></div>
-       
-       <script async
-        src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["MAPS_API_KEY"]%>&callback=initMap&v=weekly">
-      </script>
-   
-  <%end%>
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["MAPS_API_KEY"]%>&callback=initMap&v=weekly">
+</script>
 
 <div class="container pt-4">
   <div class="row d-flex justify-content-center">
@@ -28,6 +12,14 @@
     </div>
     <div class="col-4">
        <h3><%=@tree.owner%></h3>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-4 pb-4">
+    <h3>Nombre:</h3>
+    </div>
+    <div class="col-4">
+       <h3><%=@tree.tree_type%></h3>
     </div>
   </div>
   
@@ -45,7 +37,7 @@
   <%= link_to 'Atras', choice_view_path(code: @tree.code), class: 'btn btn-outline-success' %>
 </div>
 <div class="col-2">
-  <%= link_to 'Insertar otro código', root_path, class: 'btn btn-outline-success' %>
+  <%= link_to 'Insertar otro código', root_path,code:"", class: 'btn btn-outline-success' %>
 </div>
 
 

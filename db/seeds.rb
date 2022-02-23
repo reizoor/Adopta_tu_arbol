@@ -1,8 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-Tree.create(nil,nil,3333,"contraseña",8.789218,-78.454570,nil)
+## Tree creation
+Tree.create(
+    owner:      "Anónimo",
+    tree_type:  "Drago",
+    code:       "tree_code",
+    password:   "contraseña",
+    latitud:    8.789218,
+    longitud:   -78.454570,
+    features:   "es una especie de planta arbórea típica del clima subtropical de Macaronesia, particularmente de las Islas Canarias, pero cuya mayor población se encuentra en el oeste de Marruecos.​"
+);
+
+# Tree.create(
+#     owner:      nil,
+#     tree_type:  "Secuoya",
+#     code:       "tree_code",
+#     password:   "contraseña",
+#     latitud:    8.789218,
+#     longitud:   -78.454570,
+#     features:   "Citrus reticulata es una especie del género Citrus, en la familia de las rutáceas, nativa del sudeste asiático y Filipinas.​"
+# );

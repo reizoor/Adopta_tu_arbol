@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     def get_code
         # @search = 
         # vali= 
-        if Tree.find_by(code: params[:code].to_i).is_a?(Tree)
+        if Tree.find_by(code: params[:code]).is_a?(Tree)
             redirect_to choice_view_path(code: params[:code])
         else
             redirect_back(fallback_location: root_path, alert: 'Código de árbol incorrecto, intente con otro código')
